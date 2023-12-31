@@ -187,12 +187,14 @@ class HomeScreenProductWidget extends StatelessWidget {
 }
 
 class HomeScreenProductWidget2 extends StatelessWidget {
-  const HomeScreenProductWidget2({Key? key, required this.imageText, required this.nameText, required this.priceText, required this.onTap, required this.icon}) : super(key: key);
+  const HomeScreenProductWidget2({Key? key, required this.imageText,this.imageOnTap ,required this.nameText, this.cartOnTap, required this.priceText, required this.onTap, required this.icon}) : super(key: key);
   final String imageText;
   final String nameText;
   final String priceText;
   final Icon icon;
   final void Function()? onTap;
+  final void Function()? cartOnTap;
+  final void Function()? imageOnTap;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -226,7 +228,9 @@ class HomeScreenProductWidget2 extends StatelessWidget {
                           //         )),
                           //   ),
                           // ),
-                          ImageWidget(imageText: imageText),
+                          GestureDetector(
+                              onTap: imageOnTap,
+                              child: ImageWidget(imageText: imageText)),
                           Text(
                             'BEST SELLER',
                             style: TextStyle(
@@ -245,7 +249,7 @@ class HomeScreenProductWidget2 extends StatelessWidget {
                           SizedBox( height: MediaQuery.sizeOf(context).height *
                               0.011,),
                           Text(
-                            priceText,
+                            '\$${priceText}',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: 'Poppins',
@@ -264,9 +268,7 @@ class HomeScreenProductWidget2 extends StatelessWidget {
               // padding: const EdgeInsets.symmetric(horizontal: 1.0),
               padding: const EdgeInsets.only(right: 8.0),
               child: GestureDetector(
-                onTap: (){
-                  log('Added to Carts');
-                },
+                onTap: cartOnTap,
                 child: Container(
                   height: 35,
                   width: 35,

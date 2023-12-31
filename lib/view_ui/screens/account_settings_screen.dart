@@ -38,9 +38,20 @@ class AccountSettingsScreen extends StatelessWidget {
                         fontSize: 16,
                         ),
                   ),
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.1,
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.white,
+                    child: Center(
+                      child: Icon(
+                        Icons.settings,
+                        size: 25,
+                        color: Colors.blue,
+                      ),
+                    ),
                   ),
+                  // SizedBox(
+                  //   width: MediaQuery.sizeOf(context).width * 0.1,
+                  // ),
                 ],
               ),
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.025,),

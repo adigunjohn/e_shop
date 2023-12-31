@@ -1,16 +1,16 @@
 import 'dart:developer';
-
-import 'package:flutter/material.dart';
 import 'package:eshop/view_ui/custom_widgets/image_widget.dart';
+import 'package:flutter/material.dart';
 
-class FavScreenProductCard extends StatelessWidget {
-  const FavScreenProductCard({Key? key, required this.onTap, required this.imageText, this.imageOnTap,this.cartOnTap, required this.priceText, required this.nameText}) : super(key: key);
+class ProductCard extends StatelessWidget {
+  const ProductCard({Key? key, required this.onTap, required this.imageText, this.imageOnTap, required this.cartOnTap, required this.priceText, required this.nameText, required this.icon}) : super(key: key);
   final void Function()? onTap;
   final void Function()? cartOnTap;
   final void Function()? imageOnTap;
   final String imageText;
   final String nameText;
   final String priceText;
+  final Icon icon;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -125,12 +125,7 @@ class FavScreenProductCard extends StatelessWidget {
               backgroundColor: Colors.black26,
               radius: 18,
               child: Center(
-                child: Icon(
-                  // Icons.favorite_border_outlined,
-                  Icons.favorite_outlined,
-                  size: 21,
-                  color: Colors.blue,
-                ),
+                child: icon,
               ),
             ),
           ),

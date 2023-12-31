@@ -23,8 +23,8 @@ class MyEShopApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<ShopViewModel>(create: (_) => ShopViewModel()),
         ChangeNotifierProvider<ThemeViewModel>(create: (_) => ThemeViewModel()),
-        ChangeNotifierProvider<ProductsViewModel>(create: (_) => ProductsViewModel()),
-        // ChangeNotifierProvider<ProductsViewModell>(create: (_) => ProductsViewModell()),
+        // ChangeNotifierProvider<ProductsViewModel>(create: (_) => ProductsViewModel()),
+        ChangeNotifierProvider<ProductsViewModell>(create: (_) => ProductsViewModell()),
       ],
       builder: (context, child){
       return MaterialApp.router(

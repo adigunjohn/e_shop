@@ -1,3 +1,5 @@
+import 'package:eshop/view_ui/screens/home_screen.dart';
+import 'package:eshop/view_ui/screens/navigation_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavigationService{
@@ -13,7 +15,7 @@ class NavigationService{
   }
   Future<dynamic> pushToDashBoard(){//todo:
     if(navigatorKey.currentState!=null){
-      return navigatorKey.currentState!.pushAndRemoveUntil(MaterialPageRoute(builder: (_)=> const SizedBox()),(route)=>false);
+      return navigatorKey.currentState!.pushAndRemoveUntil(MaterialPageRoute(builder: (_)=> NavigationScreen()),(route)=>false);
     }else{
       return Future.value();
     }
